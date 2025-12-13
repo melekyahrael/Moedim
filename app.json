@@ -24,6 +24,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "12a2772a-1ab6-428d-bbdc-0ed59b216752"
+      }
+    },
+    "owner": "melekyahrael"
   }
 }
