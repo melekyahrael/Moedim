@@ -1,21 +1,18 @@
 {
-  "name": "moedim",
+  "name": "moedim-monorepo",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
-  },
-  "dependencies": {
-    "@react-native-async-storage/async-storage": "^2.2.0",
-    "@supabase/supabase-js": "^2.87.1",
-    "expo": "~54.0.29",
-    "expo-status-bar": "~3.0.9",
-    "react": "19.1.0",
-    "react-native": "0.81.5",
-    "react-native-url-polyfill": "^3.0.0"
-  },
-  "private": true
+    "mobile": "cd apps/mobile && npm start",
+    "mobile:android": "cd apps/mobile && npm run android",
+    "mobile:ios": "cd apps/mobile && npm run ios",
+    "test": "cd apps/mobile && npm test",
+    "typecheck": "cd apps/mobile && npx tsc --noEmit",
+    "db:push": "npx supabase db push",
+    "db:pull": "npx supabase db pull",
+    "db:types": "npx supabase gen types typescript --local > apps/mobile/types/supabase.ts"
+  }
 }
